@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 # Project Overview
 
-This is primarily a React learning project that also explores GSAP animations. It is inspired by and recreated from a tutorial by Sheryians Coding School (https://youtu.be/5WDNHl-x-AM?si=BVbmJAQ9dPZkBgPi). The project showcases basic React concepts while implementing interactive animations, scroll effects, and dynamic canvas rendering using GSAP.
+This is primarily a React learning project that also explores GSAP animations. It is inspired by and recreated from a tutorial by [Sheryians Coding School](https://youtu.be/5WDNHl-x-AM?si=BVbmJAQ9dPZkBgPi). The project showcases basic React concepts while implementing interactive animations, scroll effects, and dynamic canvas rendering using GSAP.
