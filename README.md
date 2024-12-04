@@ -6,3 +6,7 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# Project Overview
+
+This is primarily a React learning project that also explores GSAP animations. It is inspired by and recreated from a tutorial by Sheryians Coding School (https://youtu.be/5WDNHl-x-AM?si=BVbmJAQ9dPZkBgPi). The project showcases basic React concepts while implementing interactive animations, scroll effects, and dynamic canvas rendering using GSAP.
