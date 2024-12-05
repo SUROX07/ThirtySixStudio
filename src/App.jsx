@@ -6,9 +6,6 @@ import { useEffect, useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-
-
-
 function App() {
   const [showCanvas, setShowCanvas] = useState(false);
   const headingRef = useRef(null);
@@ -49,9 +46,6 @@ function App() {
         }
         return !prevShowCanvas;
       });
-
-
-      
     }
     const headingElement = headingRef.current;
     headingElement.addEventListener('click', handleClick);
@@ -66,7 +60,6 @@ function App() {
         return <Canvas details={canvasdets} />
     })}
     
-
     <div className="w-full  z-[1] relative">
       <nav className="w-full  z-50 mb-10 ">
         <div className="max-w-9xl mx-[20px] px-4">
@@ -94,7 +87,7 @@ function App() {
                 At Thirtysixstudio, we build immersive digital experiences for brands with a purpose.
                 </h3>
                 <p className="text-md w-full mt-10 font-thin">
-                  We’re a boutique production studio focused on design, motion, and creative technology, constantly reimagining what digital craft can do for present-time ads and campaigns.
+                  We're a boutique production studio focused on design, motion, and creative technology, constantly reimagining what digital craft can do for present-time ads and campaigns.
                 </p>
                 <p className="text-md w-full mt-10 font-thin">
                   Scroll
@@ -102,15 +95,44 @@ function App() {
         </div>
       </div>
 
-      <div className="w-full overflow-hidden">
+      <div 
+        className="w-full overflow-hidden"
+        onMouseEnter={(e) => {
+          const cursor = document.createElement('div');
+          cursor.style.width = '0px';
+          cursor.style.height = '0px';
+          cursor.style.backgroundColor = showCanvas ? '#ffffff' : '#fd2c2a';
+          cursor.style.borderRadius = '50%';
+          cursor.style.position = 'fixed';
+          cursor.style.pointerEvents = 'none';
+          cursor.style.zIndex = '9999';
+          cursor.style.transition = 'width 0.3s, height 0.3s';
+          cursor.style.transform = 'translate(-50%, -50%)';
+          document.body.appendChild(cursor);
+          cursor.offsetHeight;
+          cursor.style.width = '50px';
+          cursor.style.height = '50px';
+          const moveHandler = (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+          };
+          document.addEventListener('mousemove', moveHandler);
+          e.currentTarget.onmouseleave = () => {
+            cursor.style.width = '0px';
+            cursor.style.height = '0px';
+            setTimeout(() => {
+              document.removeEventListener('mousemove', moveHandler);
+              cursor.remove();
+            }, 300);
+          };
+        }}
+        style={{cursor: 'none'}}
+      >
               <h1 ref={headingRef} className="text-[15.5rem] font-thin tracking-tight leading-none text-center">
                 Thirtysixstudio
               </h1>
-
       </div>
-
     </div>
-        
   </div>
 
   <div className=" mt-32 px-10 relative">
